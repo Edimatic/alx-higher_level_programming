@@ -1,2 +1,8 @@
 #!/usr/bin/python3
-exec(__import__('this').s)
+import this
+
+import this
+
+import this 
+
+import this `
