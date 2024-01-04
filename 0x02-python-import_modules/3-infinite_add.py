@@ -1,9 +1,19 @@
 #!usr/bin/python
-if __name__ == "__main__":
-    """Print the addition of all arguments."""
-    import sys
+import sys
 
-    total = 0
-    for i in range(len(sys.argv) - 1):
-        total += int(sys.argv[i + 1])
-    print("{}".format(total))
+def add_arguments(arguments):
+    result = sum(int(arg) for arg in arguments)
+    return result
+
+if __name__ == "__main__":
+    # Extracting command-line arguments excluding the script name
+    arguments = sys.argv[1:]
+
+    # Ensuring there are arguments before attempting addition
+    if arguments:
+        # Adding all arguments and printing the result
+        result = add_arguments(arguments)
+        print(result)
+    else:
+        print("No arguments provided.")
+
