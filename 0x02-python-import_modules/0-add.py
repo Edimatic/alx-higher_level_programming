@@ -1,15 +1,9 @@
 #!/usr/bin/python3
 
-# File: add_0.py
-# Content: def add(a, b):
+if __name__ == "__main__":
+    """Print the sum of 1 and 2."""
+    from add_0 import add
 
-
-# Main program
-a = 1
-b = 2
-
-add_0 = __import__('add_0', globals(), locals(), ['add'], 0)
-result = add_0.add(a, b)
-
-print('{} + {} = {}'.format(a, b, result))
-
+    a = 1
+    b = 2
+    print("{} + {} = {}".format(a, b, add(a, b)))
