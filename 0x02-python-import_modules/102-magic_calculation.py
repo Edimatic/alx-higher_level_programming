@@ -1,12 +1,9 @@
-#!/usr/bin/python3
+#!usr/bin/python
+if __name__ == "__main__":
+    """Print the addition of all arguments."""
+    import sys
 
-def magic_calculation(a, b):
-    add, sub = __import__('magic_calculation_102', globals(), locals(), ('add', 'sub'), 0)
-
-    if a < b:
-        c = add(a, b)
-        for i in range(4, 7):
-            c = add(c, i)
-        return c
-    else:
-        return sub(a, b)
+    total = 0
+    for i in range(len(sys.argv) - 1):
+        total += int(sys.argv[i + 1])
+    print("{}".format(total))
