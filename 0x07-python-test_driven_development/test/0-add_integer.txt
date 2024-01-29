@@ -1,8 +1,8 @@
 # 0-add_integer.txt
 
-*******************************
-* How to Use 0-add_integer.py *
-*******************************
+			*******************************
+			* How to Use 0-add_integer.py *
+			*******************************
 
 This module defines an integer addition function ``add_integer(a, b=98)``.
 
