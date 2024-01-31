@@ -1,148 +1,61 @@
-# 6-max_integer_test.py
+#!/usr/bin/python3
+"""Unittests for max_integer([..])."""
 
-                    ================================
-                    How to Use 6-max_integer_test.py
-                    ================================
+import unittest
+max_integer = __import__('6-max_integer').max_integer
 
-This module defines a text-indentation function ``text_indentation(text)``.
 
-Usage
-=====
+class TestMaxInteger(unittest.TestCase):
+    """Define unittests for max_integer([..])."""
 
-Text is printed with two new lines after each of the characters ``.``, ``?``,
-and ``:``.
+    def test_ordered_list(self):
+        """Test an ordered list of integers."""
+        ordered = [1, 2, 3, 4]
+        self.assertEqual(max_integer(ordered), 4)
 
-::
+    def test_unordered_list(self):
+        """Test an unordered list of integers."""
+        unordered = [1, 2, 4, 3]
+        self.assertEqual(max_integer(unordered), 4)
 
-    >>> text_indentation = __import__('5-text_indentation').text_indentation
-    >>> text_indentation("Hello?")
-    Hello?
-    <BLANKLINE>
+    def test_max_at_begginning(self):
+        """Test a list with a beginning max value."""
+        max_at_beginning = [4, 3, 2, 1]
+        self.assertEqual(max_integer(max_at_beginning), 4)
 
-No spaces are printed at the beginning of a line.
+    def test_empty_list(self):
+        """Test an empty list."""
+        empty = []
+        self.assertEqual(max_integer(empty), None)
 
-::
+    def test_one_element_list(self):
+        """Test a list with a single element."""
+        one_element = [7]
+        self.assertEqual(max_integer(one_element), 7)
 
-    >>> text_indentation("   Hi there.")
-    Hi there.
-    <BLANKLINE>
+    def test_floats(self):
+        """Test a list of floats."""
+        floats = [1.53, 6.33, -9.123, 15.2, 6.0]
+        self.assertEqual(max_integer(floats), 15.2)
 
-::
+    def test_ints_and_floats(self):
+        """Test a list of ints and floats."""
+        ints_and_floats = [1.53, 15.5, -9, 15, 6]
+        self.assertEqual(max_integer(ints_and_floats), 15.5)
 
-    >>> text_indentation("          ")
+    def test_string(self):
+        """Test a string."""
+        string = "Ehoneah"
+        self.assertEqual(max_integer(string), 'r')
 
-Similarly, no spaces are printed at the end of each printed line.
+    def test_list_of_strings(self):
+        """Test a list of strings."""
+        strings = ["Ehoneah", "is", "my", "name"]
+        self.assertEqual(max_integer(strings), "name")
 
-::
+    def test_empty_string(self):
+        """Test an empty string."""
+        self.assertEqual(max_integer(""), None)
 
-    >>> text_indentation("Hello.   ")
-    Hello.
-    <BLANKLINE>
-
-::
-
-    >>> text_indentation("    Woah now.    This is messy.   ")
-    Woah now.
-    <BLANKLINE>
-    This is messy.
-    <BLANKLINE>
-
-New lines are only printed for the characters ``.``, ``?``, and ``:`` -
-text not ending with one of these characters is not ended with a new line.
-
-::
-
-    >>> text_indentation("No ending period, what bad grammar")
-    No ending period, what bad grammar
-
-New lines within a string are printed as normal.
-
-::
-
-    >>> text_indentation("Let's print a new-line! Here goes:\nPrinted.")
-    Let's print a new-line! Here goes:
-    <BLANKLINE>
-    <BLANKLINE>
-    Printed.
-    <BLANKLINE>
-
-::
-
-    >>> text_indentation("\n\n\n We just printed three new lines.")
-    <BLANKLINE>
-    <BLANKLINE>
-    <BLANKLINE>
-    We just printed three new lines.
-    <BLANKLINE>
-
-::
-    >>> text_indentation("A sneaky \n new line.")
-    A sneaky 
-    new line.
-    <BLANKLINE>
-
-A combo example:
-
-::
-
-    >>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing "
-    ... "elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas "
-    ... "commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, "
-    ... "sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi videri "
-    ... "nihil dolere. Transfer idem ad modestiam vel temperantiam, quae est "
-    ... "moderatio cupiditatum rationi oboediens. Si id dicis, vicimus. Inde "
-    ... "sermone vario sex illa a Dipylo stadia confecimus. Sin aliud quid "
-    ... "voles, postea. Quae animi affectio suum cuique tribuens atque hanc, "
-    ... "quam dico. Utinam quidem dicerent alium alio beatiorem! Iam ruinas "
-    ... "videres") # doctest: +NORMALIZE_WHITESPACE
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <BLANKLINE>
-    Quonam modo?
-    <BLANKLINE>
-    Utrum igitur tibi litteram videor an totas paginas commovere?
-    <BLANKLINE>
-    Non autem hoc:
-    <BLANKLINE>
-    igitur ne illud quidem.
-    <BLANKLINE>
-    Fortasse id optimum, sed ubi illud:
-    <BLANKLINE>
-    Plus semper voluptatis?
-    <BLANKLINE>
-    Teneo, inquit, finem illi videri nihil dolere.
-    <BLANKLINE>
-    Transfer idem ad modestiam vel temperantiam, 
-    quae est moderatio cupiditatum rationi oboediens.
-    <BLANKLINE>
-    Si id dicis, vicimus.
-    <BLANKLINE>
-    Inde sermone vario sex illa a Dipylo stadia confecimus.
-    <BLANKLINE>
-    Sin aliud quid voles, postea.
-    <BLANKLINE>
-    Quae animi affectio suum cuique tribuens atque hanc, quam dico.
-    <BLANKLINE>
-    Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
-
-Invalid Text
-============
-
-The paramter ``text`` must be a string. Otherwise, a TypeError is raised.
-
-::
-
-    >>> text_indentation(7)
-    Traceback (most recent call last):
-    TypeError: text must be a string
-
-::
-
-    >>> text_indentation({"one": 1, "two": 2})
-    Traceback (most recent call last):
-    TypeError: text must be a string
-
-::
-
-    >>> text_indentation(None)
-    Traceback (most recent call last):
-    TypeError: text must be a string
+if __name__ == '__main__':
+    unittest.main()
