@@ -6,26 +6,26 @@ This module contain a function that prints a square
 """
 
 
-def print_square(in_put):
+def print_square(put):
     """This function prints a square with the character #
 
     Args:
         size (int): This represents the length of the square
 
     Raises:
-        TypeError: If the in_put size is not an integer
-        TypeError: If the in_put size is a float and less than zero
-        ValueError: If the in_put size is less than zero
+        TypeError: If the put size is not an integer
+        TypeError: If the put size is a float and less than zero
+        ValueError: If the put size is less than zero
 
     """
 
-    if not isinstance(in_put, int):
-        raise TypeError("the in_put type must be an integer")
-    elif in_put < 0:
-        raise ValueError("the in_put must be >= 0")
-    elif isinstance(in_put, float) and in_put < 0:
-        raise TypeError("the in_put type must be an integer")
-    for n in range(0, in_put):
-        for m in range(in_put):
+    if not isinstance(put, int):
+        raise TypeError("the put type must be an integer")
+    elif put < 0:
+        raise ValueError("the put must be >= 0")
+    elif isinstance(put, float) and put < 0:
+        raise TypeError("the put type must be an integer")
+    for n in range(0, put):
+        for m in range(put):
             print("#", end="")
         print("")
