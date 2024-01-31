@@ -1,30 +1,37 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # 5-text_indentation.py
-"""Defines a text-indentation function."""
+"""
+
+This module contains a function that indents texts
+
+"""
 
 
 def text_indentation(text):
-    """Print text with two new lines after each '.', '?', and ':'.
+    '''This function prints a text with 2 new lines after each ".", "?", or ":"
 
     Args:
-        text (string): The text to print.
+        text (str): The string to be printed
+
     Raises:
-        TypeError: If text is not a string.
-    """
+        TypeError: If text is not a string
+
+    '''
+
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    c = 0
-    while c < len(text) and text[c] == ' ':
-        c += 1
+    count = 0
+    while count < len(text) and text[count] == " ":
+        count = count + 1
 
-    while c < len(text):
-        print(text[c], end="")
-        if text[c] == "\n" or text[c] in ".?:":
-            if text[c] in ".?:":
+    while count < len(text):
+        print(text[count], end="")
+        if text[count] == "\n" or text[count] in ".?:":
+            if text[count] in ".?:":
                 print("\n")
-            c += 1
-            while c < len(text) and text[c] == ' ':
-                c += 1
+            count = count + 1
+            while count < len(text) and text[count] == " ":
+                count = count + 1
             continue
-        c += 1
+        count = count + 1
