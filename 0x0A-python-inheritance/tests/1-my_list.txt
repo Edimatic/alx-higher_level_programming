@@ -1,0 +1,42 @@
+		==============
+		1-my_list.txt
+		==============
+
+The Public Instance Method
+-------------------------
+
+MyList Class Implementation Workflow
+
+1. **Class Definition:**
+   - Create a new Python file (e.g., 0-my_list.py) to define the `MyList` class.
+   - Inherit from the built-in `list` class to create the custom list class.
+
+2. **Instance Method: print_sorted:**
+   - Add a public instance method `print_sorted` to the `MyList` class.
+   - Inside the method, use the `sorted()` function to sort the list in ascending order.
+   - Print the sorted list.
+
+3. **Example Usage:**
+   - In the `__main__` block, create an instance of `MyList` (e.g., my_list).
+   - Initialize it with an example list of integers.
+   - Print the original list.
+   - Call the `print_sorted` method to print the sorted list.
+
+4. **Testing:**
+   - Run the script to test the functionality of the `MyList` class.
+   - Verify that the original list and the sorted list are printed as expected.
+
+5. **Documentation:**
+   - Add docstrings to the class and methods for clear documentation.
+   - Include information about the purpose of the class and how to use the `print_sorted` method.
+
+6. **No Import Statements:**
+   - Ensure that no import statements are used, as per the requirement.
+
+7. **Version Control:**
+   - If you're using version control (e.g., Git), commit the changes to the repository.
+
+8. **Submission:**
+   - Submit the 0-my_list.py file for evaluation.
+
+Note: The example usage in the script demonstrates the functionality of the `MyList` class. You can replace it with your own test cases as needed.
