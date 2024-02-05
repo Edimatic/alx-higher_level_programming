@@ -1,42 +1,70 @@
-		==============
-		1-my_list.txt
-		==============
+The ``MyList`` class
+====================
 
-The Public Instance Method
--------------------------
+Creating ``MyList``
+--------------------
 
-MyList Class Implementation Workflow
+Importing class from the module:
+    >>> MyList = __import__('0-my_list').MyList
 
-1. **Class Definition:**
-   - Create a new Python file (e.g., 0-my_list.py) to define the `MyList` class.
-   - Inherit from the built-in `list` class to create the custom list class.
 
-2. **Instance Method: print_sorted:**
-   - Add a public instance method `print_sorted` to the `MyList` class.
-   - Inside the method, use the `sorted()` function to sort the list in ascending order.
-   - Print the sorted list.
+Creating an instance and printing the sorted list:
+    >>> my_list = MyList([4, 2, 8, 1, 7])
+    >>> print(my_list)
+    [4, 2, 8, 1, 7]
 
-3. **Example Usage:**
-   - In the `__main__` block, create an instance of `MyList` (e.g., my_list).
-   - Initialize it with an example list of integers.
-   - Print the original list.
-   - Call the `print_sorted` method to print the sorted list.
+    >>> my_list.print_sorted()
+    [1, 2, 4, 7, 8]
 
-4. **Testing:**
-   - Run the script to test the functionality of the `MyList` class.
-   - Verify that the original list and the sorted list are printed as expected.
 
-5. **Documentation:**
-   - Add docstrings to the class and methods for clear documentation.
-   - Include information about the purpose of the class and how to use the `print_sorted` method.
+Creating an instance with an empty list and printing the sorted list:
+    >>> empty_list = MyList()
+    >>> print(empty_list)
+    []
 
-6. **No Import Statements:**
-   - Ensure that no import statements are used, as per the requirement.
+    >>> empty_list.print_sorted()
+    []
 
-7. **Version Control:**
-   - If you're using version control (e.g., Git), commit the changes to the repository.
 
-8. **Submission:**
-   - Submit the 0-my_list.py file for evaluation.
+Creating an instance with a list of negative integers and printing the sorted list:
+    >>> negative_list = MyList([-4, -2, -8, -1, -7])
+    >>> print(negative_list)
+    [-4, -2, -8, -1, -7]
 
-Note: The example usage in the script demonstrates the functionality of the `MyList` class. You can replace it with your own test cases as needed.
+    >>> negative_list.print_sorted()
+    [-8, -7, -4, -2, -1]
+
+Testing the behavior with non-integer elements:
+    >>> mixed_list = MyList([4, 'hello', 2, 'world'])
+    >>> print(mixed_list)
+    [4, 'hello', 2, 'world']
+
+    >>> mixed_list.print_sorted()
+    Traceback (most recent call last):
+        ...
+    TypeError: '<' not supported between instances of 'str' and 'int'
+
+
+Testing the behavior with non-list argument:
+    >>> non_list = MyList('not a list')
+    Traceback (most recent call last):
+        ...
+    TypeError: 'str' object is not callable
+
+
+Testing the behavior with floating-point numbers:
+    >>> float_list = MyList([4.5, 2.3, 8.1, 1.0, 7.7])
+    >>> print(float_list)
+    [4.5, 2.3, 8.1, 1.0, 7.7]
+
+    >>> float_list.print_sorted()
+    [1.0, 2.3, 4.5, 7.7, 8.1]
+
+
+Testing the behavior with repeated elements:
+    >>> repeated_list = MyList([4, 2, 8, 1, 7, 4, 2, 8])
+    >>> print(repeated_list)
+    [4, 2, 8, 1, 7, 4, 2, 8]
+
+    >>> repeated_list.print_sorted()
+    [1, 2, 4, 7, 8, 1, 2, 4]
