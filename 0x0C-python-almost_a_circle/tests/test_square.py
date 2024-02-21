@@ -55,7 +55,7 @@
 #     #     with self.assertRaises(TypeError) as x:
 #     #         s1 = Square()
 #     #     self.assertEqual(
-#     #         "__init__() missing 1 required positional argument: 'size'", str(
+#     #    "__init__() missing 1 required positional argument: 'size'", str(
 #     #             x.exception))
 
 #     def test_10_4(self):

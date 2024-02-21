@@ -92,7 +92,7 @@
 #         self.assertEqual(bytearray(b'abcefg'), Base(bytearray(b'abcefg')).id)
 
 #     def test_memoryview_id(self):
-#         self.assertEqual(memoryview(b'abcefg'), Base(memoryview(b'abcefg')).id)
+#   self.assertEqual(memoryview(b'abcefg'), Base(memoryview(b'abcefg')).id)
 
 #     def test_inf_id(self):
 #         self.assertEqual(float('inf'), Base(float('inf')).id)

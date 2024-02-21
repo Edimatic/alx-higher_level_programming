@@ -451,7 +451,7 @@
 
 
 # class TestRectangle_stdout(unittest.TestCase):
-#     """Unittests for testing __str__ and display methods of Rectangle class."""
+# """Unittests for testing __str__ and display methods of Rectangle class."""
 
 #     @staticmethod
 #     def capture_stdout(rect, method):
