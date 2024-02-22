@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module contains a class to serve as base for other classes"""
+"""This module contains a class to serve as base for other classes."""
 
 
 import csv
@@ -9,12 +9,12 @@ import turtle
 
 
 class Base:
-    """Represents base of all classes created """
+    """Represents base of all classes created."""
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """ """
+        """Initialize function."""
         if id is not None:
             self.id = id
         else:
@@ -23,7 +23,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Return the JSON representation of list_dictionaries"""
+        """Return the JSON representation of list_dictionaries."""
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         if (type(list_dictionaries) != list or not
@@ -33,7 +33,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Save JSON representation to file"""
+        """Save JSON representation to file."""
         file_name = cls.__name__ + ".json"
         with open(file_name, "w") as jsonfile:
             if list_objs is None:
@@ -44,7 +44,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Returns list of JSON string representations"""
+        """Return list of JSON string representations."""
         json_string_list = []
 
         if json_string is not None and json_string != '':
@@ -56,7 +56,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Returns an instance with all attributes already set"""
+        """Return an instance with all attributes already set."""
         # create an instance of an existing class
         if cls.__name__ == 'Rectangle':
             dummy = cls(1, 1)
@@ -68,8 +68,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Returns a list of instances"""
-
+        """Return a list of instances."""
         file_name = cls.__name__ + ".json"
         list_of_instances = []
         list_dictionaries = []
@@ -84,8 +83,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Serializes list_objs and saves to file"""
-
+        """Serialize list_objs and saves to file."""
         # if (type(list_objs) != list and list_objs is not None
         #    or not all(isinstance(i, cls) for i in list_objs)):
 
@@ -118,8 +116,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """Deserializes CSV format from a file"""
-
+        """Deserialize CSV format from a file."""
         # file_name = cls.__name__ + ".csv"
         # list_of_instances = []
         # if os.path.exists(file_name):
@@ -155,6 +152,7 @@ class Base:
     @staticmethod
     def draw(list_rectangles, list_squares):
         """Draw Rectangles and Squares using the turtle module.
+
         Args:
             list_rectangles (list): A list of Rectangle objects to draw.
             list_squares (list): A list of Square objects to draw.

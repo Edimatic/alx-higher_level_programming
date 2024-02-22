@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""This module contains a rectangle class"""
+"""This module contains a rectangle class."""
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Represents a rectangle """
+    """Represent a rectangle."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initializes attributes of the object"""
+        """Initialize attributes of the object."""
         self.width = width
         self.height = height
         self.x = x
@@ -18,28 +18,28 @@ class Rectangle(Base):
     # List of getter functions
     @property
     def width(self):
-        """Gets the value for width"""
+        """Get the value for width."""
         return self.__width
 
     @property
     def height(self):
-        """Gets the value for height"""
+        """Get the value for height."""
         return self.__height
 
     @property
     def x(self):
-        """Gets the value for x"""
+        """Get the value for x."""
         return self.__x
 
     @property
     def y(self):
-        """Gets the value for y"""
+        """Get the value for y."""
         return self.__y
 
     # List of setter functions
     @width.setter
     def width(self, value):
-        """Sets the value for width"""
+        """Set the value for width."""
         if (type(value) is not int):
             raise TypeError("width must be an integer")
 
@@ -50,7 +50,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        """Sets the value for height"""
+        """Set the value for height."""
         if (type(value) is not int):
             raise TypeError("height must be an integer")
 
@@ -61,7 +61,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        """Sets the value for x"""
+        """Set the value for x."""
         if (type(value) is not int):
             raise TypeError("x must be an integer")
 
@@ -72,7 +72,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        """Sets the value for y"""
+        """Set the value for y."""
         if (type(value) is not int):
             raise TypeError("y must be an integer")
 
@@ -82,11 +82,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Defines the area of the rectangle"""
+        """Define the area of the rectangle."""
         return (self.__height * self.__width)
 
     def display(self):
-        """Displays the rectangle using # """
+        """Display the rectangle using #."""
         for y in range(self.y):
             print("")
         for row in range(self.__height):
@@ -97,13 +97,12 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        """Defines a format for the string representation of the class"""
+        """Define a format for the string representation of the class."""
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
 {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
-        """Assigns an argument to each attribute"""
-
+        """Assign an argument to each attribute."""
         if args and len(args) != 0:
             a = 0
             for arg in args:
@@ -139,8 +138,7 @@ class Rectangle(Base):
                     self.y = v
 
     def to_dictionary(self):
-        """Returns the dictionary representation of a Rectangle"""
-
+        """Return the dictionary representation of a Rectangle."""
         obj_dictionary = {'id': self.id, 'width': self.__width,
                           'height': self.__height, 'x': self.__x,
                           'y': self.__y}
