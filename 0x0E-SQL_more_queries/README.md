@@ -1,7 +1,6 @@
 #	SQL - More queries
 
-Certainly! Here are some more SQL queries covering a variety of scenarios:
-
+Here are some more SQL queries covering a variety of scenarios:
 
 
 ##Select All Columns from a Table:
