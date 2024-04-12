@@ -1,0 +1,1 @@
+Object-relational mapping (ORM) is an abstraction layer that simplifies interactions between two different data representations— tables in relational databases and objects constructed with object-oriented programming (OOP) languages, such as C++,  Java, Ruby, C#, PHP, Python, TypeScript, and many others.
