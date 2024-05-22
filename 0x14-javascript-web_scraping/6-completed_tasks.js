@@ -1,9 +1,9 @@
 #!/usr/bin/node
+// web scrapper
 
 const request = require('request');
-const url = process.argv[2];
 
-request.get(url, { json: true }, (error, response, body) => {
+request.get(process.argv[2], { json: true }, (error, response, body) => {
   if (error) {
     console.log(error);
     return;
@@ -19,3 +19,5 @@ request.get(url, { json: true }, (error, response, body) => {
       }
     }
   });
+  console.log(tasksCompleted);
+});
